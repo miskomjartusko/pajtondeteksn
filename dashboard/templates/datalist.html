@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+{% block title %} Home {% endblock %}
+ 
+{% block body %}
+
+<div class="container">
+ <table class="table">
+     <thead style="background-color: brown;color: aliceblue;">
+        <th>ID</th>
+        <th>Meno</th>
+        <th>Fing seq</th>
+        <th>actions</th>
+    </thead>
+
+   <tbody>
+    {% for person in people %}
+    <tr
+    {% if loop.index %2==0 %}
+    style="background-color: rgb(255, 217, 247);"
+    {% else %}
+    style="background-color: rgb(248, 169, 231);"
+    {% endif %}
+    ><td>{{ loop.index }}</td>
+    <td><a href="/{{person.id}}">{{person.name}}</a></td>
+    <td>{{person.fing_seq}}</td>
+    <td>
+        |<span style="font-size: 24px;color:red;">  
+          <a href="/{{person.id}}/delete"> <i class="fas fa-trash-alt"></i></a></span></td>
+    {% endfor %}
+   </tbody>
+ </table>
+  
+</div>
+
+
+{% endblock %}

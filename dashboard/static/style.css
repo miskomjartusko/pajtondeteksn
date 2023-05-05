@@ -1,0 +1,12 @@
+.photos {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px 40px;
+}
+
+.photos img {
+    height: 400px;
+    width: auto;
+}

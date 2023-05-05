@@ -1,0 +1,12 @@
+<h3>Id</h3>
+<p>{{person.id}}</p><hr>
+<h3>Meno</h3>
+<p>{{person.name}}</p><hr>
+<h3>Sekvencia cisel</h3>
+<p>{{person.fing_seq}}</p><hr>
+<h3>Fotky</h3>
+<div class="photos">
+{% for photo in photos %}
+<img src="{{photo}}" alt="">
+{% endfor %}
+</div>
